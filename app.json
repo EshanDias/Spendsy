@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Budget Manager",
-    "slug": "BudgetManager",
+    "name": "Spendsy",
+    "slug": "Spendsy",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": ["ios", "android", "web"],
@@ -19,10 +19,10 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.diasenterprises.BudgetManager"
+      "bundleIdentifier": "com.diasenterprises.spendsy"
     },
     "android": {
-      "package": "com.diasenterprises.BudgetManager"
+      "package": "com.diasenterprises.spendsy"
     }
   }
 }
