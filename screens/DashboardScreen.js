@@ -12,9 +12,12 @@ import { Ionicons, FontAwesome } from '@expo/vector-icons';
 import moment from 'moment';
 import Colors from '../constants/Colors';
 
+import Wallets from '../components/wallets';
+
 export default function DashBoadScreen() {
   return (
     <View style={styles.mainContainer}>
+      <View style={styles.notificationBar}></View>
       {/* Header */}
       <View
         style={{
@@ -28,9 +31,11 @@ export default function DashBoadScreen() {
         <View style={{}}>
           <Text
             style={{
-              color: '#fff',
-              fontSize: 12,
-              fontWeight: 'bold'
+              color: Colors.white,
+              fontSize: 25,
+              fontWeight: 'bold',
+              paddingTop: 10,
+              paddingLeft: 10
             }}
           >
             Dashboard
@@ -39,70 +44,53 @@ export default function DashBoadScreen() {
         {/* Right */}
         <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
           <Ionicons.Button
-            style={{
-              padding: 0,
-              margin: 0,
-              paddingLeft: 5,
-              backgroundColor: 'green'
-            }}
+            style={styles.headerIconButton}
+            size={35}
             name="md-wallet"
           ></Ionicons.Button>
           <Ionicons.Button
-            style={{
-              padding: 0,
-              margin: 0,
-              paddingLeft: 5,
-              backgroundColor: 'green'
-            }}
+            style={styles.headerIconButton}
+            size={35}
             name="md-calendar"
           ></Ionicons.Button>
           <Ionicons.Button
-            style={{
-              padding: 0,
-              margin: 0,
-              paddingLeft: 5,
-              backgroundColor: 'green'
-            }}
+            style={styles.headerIconButton}
+            size={35}
             name="md-search"
           ></Ionicons.Button>
         </View>
       </View>
       {/* Date Picker */}
       <View style={{ backgroundColor: 'green', padding: 5 }}>
-        <ScrollView horizontal>
-          {getMonthList().map(buttonName => (
+        {/* <ScrollView horizontal >
+          {getMonthList().map((buttonName, index) => (
             <View
-              key={Math.random().toString()}
+              key={index.toString()}
               style={{ color: '#f9c2ff', width: '10%' }}
             >
+              {console.log(buttonName)}
               <Button color="green" title={buttonName} />
             </View>
           ))}
-        </ScrollView>
-        {/* <FlatList
+        </ScrollView> */}
+        <FlatList
           horizontal
           data={getMonthList()}
           keyExtractor={() => Math.random().toString()}
           renderItem={({ item }) => (
             <View style={{ color: '#f9c2ff' }}>
-              <Button color="green" title={item} style={{ padding: 60 }} />
+              <Button color="green" title={item} />
             </View>
           )}
-        /> */}
+          contentContainerStyle={{}}
+          style={{}}
+        />
       </View>
       <ScrollView
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
       >
-        <View style={styles.mainContainer}>
-          <Text>This is Dashboard</Text>
-          <View>
-            <Text>My Wallets</Text>
-          </View>
-          <View>
-            <Text>Graphs</Text>
-          </View>
-        </View>
+        <Wallets />
       </ScrollView>
     </View>
   );
@@ -126,98 +114,20 @@ DashBoadScreen.navigationOptions = {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    backgroundColor: '#fff',
+    backgroundColor: Colors.white,
     width: '100%',
-    height: '100%',
-    paddingTop: 24
+    height: '100%'
+  },
+  notificationBar: {
+    backgroundColor: 'green',
+    width: '100%',
+    height: 24
+  },
+  headerIconButton: {
+    padding: 0,
+    margin: 0,
+    paddingLeft: 5,
+    backgroundColor: 'green',
+    paddingTop: 10
   }
-  // container: {
-  //   backgroundColor: '#fff',
-  //   width: '100%'
-  // },
-  // developmentModeText: {
-  //   marginBottom: 20,
-  //   color: 'rgba(0,0,0,0.4)',
-  //   fontSize: 14,
-  //   lineHeight: 19,
-  //   textAlign: 'center'
-  // },
-  // contentContainer: {
-  //   padding: 10
-  // },
-  // welcomeContainer: {
-  //   alignItems: 'center',
-  //   marginTop: 10,
-  //   marginBottom: 20
-  // },
-  // welcomeImage: {
-  //   width: 100,
-  //   height: 80,
-  //   resizeMode: 'contain',
-  //   marginTop: 3,
-  //   marginLeft: -10
-  // },
-  // getStartedContainer: {
-  //   alignItems: 'center',
-  //   marginHorizontal: 50
-  // },
-  // homeScreenFilename: {
-  //   marginVertical: 7
-  // },
-  // codeHighlightText: {
-  //   color: 'rgba(96,100,109, 0.8)'
-  // },
-  // codeHighlightContainer: {
-  //   backgroundColor: 'rgba(0,0,0,0.05)',
-  //   borderRadius: 3,
-  //   paddingHorizontal: 4
-  // },
-  // getStartedText: {
-  //   fontSize: 17,
-  //   color: 'rgba(96,100,109, 1)',
-  //   lineHeight: 24,
-  //   textAlign: 'center'
-  // },
-  // tabBarInfoContainer: {
-  //   position: 'absolute',
-  //   bottom: 0,
-  //   left: 0,
-  //   right: 0,
-  //   ...Platform.select({
-  //     ios: {
-  //       shadowColor: 'black',
-  //       shadowOffset: { width: 0, height: -3 },
-  //       shadowOpacity: 0.1,
-  //       shadowRadius: 3
-  //     },
-  //     android: {
-  //       elevation: 20
-  //     },
-  //     web: {
-  //       shadowColor: 'black'
-  //     }
-  //   }),
-  //   alignItems: 'center',
-  //   backgroundColor: '#fbfbfb',
-  //   paddingVertical: 20
-  // },
-  // tabBarInfoText: {
-  //   fontSize: 17,
-  //   color: 'rgba(96,100,109, 1)',
-  //   textAlign: 'center'
-  // },
-  // navigationFilename: {
-  //   marginTop: 5
-  // },
-  // helpContainer: {
-  //   marginTop: 15,
-  //   alignItems: 'center'
-  // },
-  // helpLink: {
-  //   paddingVertical: 15
-  // },
-  // helpLinkText: {
-  //   fontSize: 14,
-  //   color: '#2e78b7'
-  // }
 });
