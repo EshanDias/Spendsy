@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, Platform, Button } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { SimpleLineIcons, Entypo } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
+
+import Card from '../components/Card';
 
 function Wallet(props) {
   return (
     <View
       style={{
         flexDirection: 'row',
-        margin: 5
+        margin: 5,
+        height: 50
       }}
     >
-      <Ionicons
-        name="md-wallet"
+      <Entypo
+        name="wallet"
         size={35}
         color={Colors.gold}
         style={{ width: '10%' }}
@@ -41,7 +44,11 @@ function Wallet(props) {
         </Text>
       </View>
       <View style={{ width: '5%', justifyContent: 'center' }}>
-        <Ionicons name="md-exit" size={20} color={Colors.lightGrey} />
+        <SimpleLineIcons
+          name="arrow-right"
+          size={20}
+          color={Colors.lightGrey}
+        />
       </View>
     </View>
   );
@@ -49,8 +56,7 @@ function Wallet(props) {
 
 export default function Wallets() {
   const maxWalletDisplayCount = 4;
-  const [height, setHeight] = useState(55 * maxWalletDisplayCount);
-  // let height = 55 * 4;
+  const [height, setHeight] = useState(60 * maxWalletDisplayCount);
   const allWallets = [1, 2, 3, 4, 5];
   return (
     <View
@@ -77,7 +83,9 @@ export default function Wallets() {
         style={{
           flexDirection: 'column',
           height: allWallets.length > maxWalletDisplayCount ? height : -1,
-          overflow: 'hidden'
+          overflow: 'hidden',
+          padding: 0,
+          margin: 0
         }}
       >
         {allWallets.map((w, i) => (
