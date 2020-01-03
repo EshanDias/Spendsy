@@ -12,8 +12,8 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function Card() {
-  return <View style={styles.card}></View>;
+export default function Card(props) {
+  return <View style={styles.card}>{props.children}</View>;
 }
 
 function elevationShadowStyle(elevation) {
