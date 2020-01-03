@@ -5,7 +5,7 @@ const greyColor = '#c7c7c7';
 const darkGrey = '#6e6e6e';
 const lightGreen = '#29e636';
 const red = '#de300d';
-const green = 'green';
+const green = '#00BD7D';
 const greenColor = '#0aad2e';
 const white = '#fff';
 
