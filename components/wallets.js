@@ -54,21 +54,15 @@ function Wallet(props) {
   );
 }
 
-export default function Wallets() {
-  const maxWalletDisplayCount = 4;
-  const [height, setHeight] = useState(60 * maxWalletDisplayCount);
+export default function Wallets(props) {
+  const maxWalletDisplayCount = 5;
   const allWallets = [1, 2, 3, 4, 5];
+  const [height, setHeight] = useState(
+    allWallets.length > maxWalletDisplayCount ? 60 * maxWalletDisplayCount : -1
+  );
+
   return (
-    <View
-      style={{
-        padding: 10,
-        borderRadius: 15,
-        margin: 5,
-        border: 'none',
-        ...elevationShadowStyle(3),
-        backgroundColor: Colors.white
-      }}
-    >
+    <Card>
       <Text
         style={{
           fontWeight: 'bold',
@@ -82,7 +76,7 @@ export default function Wallets() {
       <View
         style={{
           flexDirection: 'column',
-          height: allWallets.length > maxWalletDisplayCount ? height : -1,
+          height: height,
           overflow: 'hidden',
           padding: 0,
           margin: 0
@@ -118,20 +112,14 @@ export default function Wallets() {
           alignSelf: 'center'
         }}
       >
-        <Button color={Colors.gold} title="ADD WALLET" />
+        <Button
+          color={Colors.gold}
+          title="ADD WALLET"
+          onPress={() => props.navigation.navigate('AddWallet')}
+        />
       </View>
-    </View>
+    </Card>
   );
-}
-
-function elevationShadowStyle(elevation) {
-  return {
-    elevation,
-    shadowColor: 'black',
-    shadowOffset: { width: 0, height: 0.5 * elevation },
-    shadowOpacity: 0.3,
-    shadowRadius: 0.8 * elevation
-  };
 }
 
 const styles = StyleSheet.create({});

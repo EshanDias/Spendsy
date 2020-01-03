@@ -8,6 +8,7 @@ import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import DashboardScreen from '../screens/DashboardScreen';
+import AddWalletcSreen from '../screens/AddWalletScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -18,7 +19,10 @@ const HomeStack = createStackNavigator(
   {
     Home: HomeScreen
   },
-  config
+  {
+    initialRouteName: 'Home',
+    ...config
+  }
 );
 
 HomeStack.navigationOptions = {
@@ -77,9 +81,17 @@ SettingsStack.path = '';
 
 const DashboardStack = createStackNavigator(
   {
-    Settings: DashboardScreen
+    Dashboard: {
+      screen: DashboardScreen
+    },
+    AddWallet: {
+      screen: AddWalletcSreen
+    }
   },
-  config
+  {
+    initialRouteName: 'Dashboard',
+    ...config
+  }
 );
 
 DashboardStack.navigationOptions = {

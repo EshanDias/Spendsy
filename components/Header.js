@@ -8,13 +8,13 @@ import {
   Button,
   FlatList
 } from 'react-native';
-import { Ionicons, Entypo } from '@expo/vector-icons';
+import { Ionicons, Entypo, MaterialIcons } from '@expo/vector-icons';
 import moment from 'moment';
 import Colors from '../constants/Colors';
 
 const DateRangeSelector = () => {
   return (
-    <View style={{ backgroundColor: 'green', padding: 5 }}>
+    <View style={{ backgroundColor: Colors.green, padding: 5 }}>
       {/* <ScrollView horizontal >
           {getMonthList().map((buttonName, index) => (
             <View
@@ -22,7 +22,7 @@ const DateRangeSelector = () => {
               style={{ color: '#f9c2ff', width: '10%' }}
             >
               {console.log(buttonName)}
-              <Button color="green" title={buttonName} />
+              <Button color={Colors.green} title={buttonName} />
             </View>
           ))}
         </ScrollView> */}
@@ -32,7 +32,7 @@ const DateRangeSelector = () => {
         keyExtractor={() => Math.random().toString()}
         renderItem={({ item }) => (
           <View style={{ color: '#f9c2ff' }}>
-            <Button color="green" title={item} />
+            <Button color={Colors.green} title={item} />
           </View>
         )}
         contentContainerStyle={{}}
@@ -45,62 +45,70 @@ const DateRangeSelector = () => {
 function HeaderIconButtons(props) {
   if (props.screen === 'dashboard') {
     return (
-      <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'flex-end',
+          backgroundColor: Colors.green
+        }}
+      >
         <Entypo.Button
           style={styles.headerIconButton}
-          size={35}
+          size={30}
           name="wallet"
         ></Entypo.Button>
-        <Ionicons.Button
+        <Entypo.Button
           style={styles.headerIconButton}
-          size={35}
-          name="md-calendar"
-        ></Ionicons.Button>
-        <Ionicons.Button
+          size={30}
+          name="calendar"
+        ></Entypo.Button>
+        <MaterialIcons.Button
           style={styles.headerIconButton}
-          size={35}
-          name="md-search"
-        ></Ionicons.Button>
+          size={30}
+          name="search"
+        ></MaterialIcons.Button>
       </View>
     );
   }
   return false;
 }
 
-export default function Header(props) {
-  return (
-    <View>
-      <View style={styles.notificationBar}></View>
-      {/* Header */}
-      <View
-        style={{
-          backgroundColor: 'green',
-          padding: 10,
-          flexDirection: 'row',
-          justifyContent: 'space-between'
-        }}
-      >
-        {/* Left */}
-        <View style={{}}>
-          <Text
-            style={{
-              color: Colors.white,
-              fontSize: 25,
-              fontWeight: 'bold',
-              paddingTop: 10,
-              paddingLeft: 10
-            }}
-          >
-            Dashboard
-          </Text>
+class Header extends React.Component {
+  render() {
+    return (
+      <View>
+        <View style={styles.notificationBar}></View>
+        {/* Header */}
+        <View
+          style={{
+            backgroundColor: Colors.green,
+            padding: 10,
+            flexDirection: 'row',
+            justifyContent: 'space-between'
+          }}
+        >
+          {/* Left */}
+          <View style={{ backgroundColor: Colors.green }}>
+            <Text
+              style={{
+                color: Colors.white,
+                fontSize: 25,
+                fontWeight: 'bold',
+                paddingTop: 10,
+                paddingLeft: 10
+              }}
+            >
+              Dashboard
+            </Text>
+          </View>
+          {/* Right */}
+          <HeaderIconButtons screen={this.props.screen} />
         </View>
-        {/* Right */}
-        <HeaderIconButtons screen={props.screen} />
+        {/* Date Picker */}
+        {this.props.dateRangeSelector ? <DateRangeSelector /> : false}
       </View>
-      {/* Date Picker */}
-      {props.dateRangeSelector ? <DateRangeSelector /> : false}
-    </View>
-  );
+    );
+  }
 }
 
 const getMonthList = () => {
@@ -122,15 +130,18 @@ const styles = StyleSheet.create({
     height: '100%'
   },
   notificationBar: {
-    backgroundColor: 'green',
+    backgroundColor: Colors.green,
     width: '100%',
     height: 24
   },
   headerIconButton: {
     padding: 0,
-    margin: 0,
+    paddingTop: 10,
     paddingLeft: 5,
-    backgroundColor: 'green',
-    paddingTop: 10
+    margin: 0,
+    marginBottom: -1,
+    backgroundColor: Colors.green
   }
 });
+
+export default Header;

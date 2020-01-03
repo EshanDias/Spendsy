@@ -15,32 +15,22 @@ import Colors from '../constants/Colors';
 import Header from '../components/Header';
 import Wallets from '../components/wallets';
 
-export default function DashBoadScreen() {
-  return (
-    <View>
-      {/* Header */}
-      <Header screen="dashboard" dateRangeSelector />
-      <ScrollView
-        style={styles.container}
-        contentContainerStyle={styles.contentContainer}
-      >
-        <Wallets />
-      </ScrollView>
-    </View>
-  );
-}
-
-const getMonthList = () => {
-  const buttonNames = [];
-  for (let i = 0; i < 12; i++) {
-    const name = moment()
-      .set('M', i)
-      .format('MMMM YYYY');
-    buttonNames.push(name);
+class DashBoadScreen extends React.Component {
+  render() {
+    return (
+      <View>
+        {/* Header */}
+        <Header screen="dashboard" dateRangeSelector />
+        <ScrollView
+          style={styles.container}
+          contentContainerStyle={styles.contentContainer}
+        >
+          <Wallets navigation={this.props.navigation} />
+        </ScrollView>
+      </View>
+    );
   }
-  buttonNames.push('Future');
-  return buttonNames;
-};
+}
 
 DashBoadScreen.navigationOptions = {
   header: null
@@ -65,3 +55,5 @@ const styles = StyleSheet.create({
     paddingTop: 10
   }
 });
+
+export default DashBoadScreen;

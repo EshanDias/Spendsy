@@ -1,4 +1,6 @@
 import React from 'react';
+import moment from 'moment';
+import { Ionicons, FontAwesome } from '@expo/vector-icons';
 import {
   View,
   StyleSheet,
@@ -8,23 +10,20 @@ import {
   Button,
   FlatList
 } from 'react-native';
-import { Ionicons, FontAwesome } from '@expo/vector-icons';
-import moment from 'moment';
+
 import Colors from '../constants/Colors';
 
 import Header from '../components/Header';
-import Wallets from '../components/wallets';
 
 export default function AddWalletcSreen() {
   return (
     <View>
-      {/* Header */}
-      <Header dateRangeSelector={true} />
+      <Header />
       <ScrollView
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
       >
-        <Wallets />
+        <Text>ADD WALLET SCREEN</Text>
       </ScrollView>
     </View>
   );
