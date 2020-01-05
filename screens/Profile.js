@@ -1,4 +1,6 @@
 import React from 'react';
+import moment from 'moment';
+import { Ionicons, FontAwesome } from '@expo/vector-icons';
 import {
   View,
   StyleSheet,
@@ -8,41 +10,43 @@ import {
   Button,
   FlatList
 } from 'react-native';
-import { Ionicons, FontAwesome } from '@expo/vector-icons';
-import moment from 'moment';
+
 import Colors from '../constants/Colors';
 
 import Header from '../components/Header';
-import Wallets from '../components/wallets';
 
-class DashBoadScreen extends React.Component {
+export default class ProfileSreen extends React.Component {
   static navigationOptions = {
-    title: 'Dashboard'
+    title: 'Profile'
   };
 
   render() {
     return (
-      <View style={styles.mainContainer}>
-        {/* Header */}
-        {/* <Header screen="dashboard" dateRangeSelector /> */}
+      <View>
+        {/* <Header /> */}
         <ScrollView
           style={styles.container}
           contentContainerStyle={styles.contentContainer}
         >
-          <Wallets navigation={this.props.navigation} />
+          <Text>Profile SCREEN</Text>
+          <Button
+            color={Colors.gold[1]}
+            title="dashboard"
+            onPress={() => this.props.navigation.navigate('Dashboard')}
+          />
         </ScrollView>
       </View>
     );
   }
 }
 
-// DashBoadScreen.navigationOptions = {
+// ProfileSreen.navigationOptions = {
 //   header: null
 // };
 
 const styles = StyleSheet.create({
   mainContainer: {
-    backgroundColor: Colors.backgroundColor,
+    backgroundColor: Colors.white,
     width: '100%',
     height: '100%'
   },
@@ -59,5 +63,3 @@ const styles = StyleSheet.create({
     paddingTop: 10
   }
 });
-
-export default DashBoadScreen;

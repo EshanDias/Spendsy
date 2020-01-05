@@ -13,11 +13,12 @@ function Wallet(props) {
         margin: 5,
         height: 50
       }}
+      onResponderRelease={() => props.navigation.navigate('Profile')}
     >
       <Entypo
         name="wallet"
         size={35}
-        color={Colors.gold}
+        color={Colors.gold[1]}
         style={{ width: '10%' }}
       />
       <View
@@ -56,7 +57,7 @@ function Wallet(props) {
 
 export default function Wallets(props) {
   const maxWalletDisplayCount = 5;
-  const allWallets = [1, 2, 3, 4, 5];
+  const allWallets = [1, 2, 3, 4, 5, 6, 7];
   const [height, setHeight] = useState(
     allWallets.length > maxWalletDisplayCount ? 60 * maxWalletDisplayCount : -1
   );
@@ -83,7 +84,12 @@ export default function Wallets(props) {
         }}
       >
         {allWallets.map((w, i) => (
-          <Wallet key={i.toString()} title="Savings Account" amount={5425} />
+          <Wallet
+            key={i.toString()}
+            title="Savings Account"
+            amount={5425}
+            {...props}
+          />
         ))}
       </View>
       {height > 0 ? (
@@ -113,7 +119,7 @@ export default function Wallets(props) {
         }}
       >
         <Button
-          color={Colors.gold}
+          color={Colors.gold[1]}
           title="ADD WALLET"
           onPress={() => props.navigation.navigate('AddWallet')}
         />
