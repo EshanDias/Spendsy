@@ -4,10 +4,10 @@ import Colors from '../constants/Colors';
 
 const styles = StyleSheet.create({
   card: {
-    padding: 10,
-    borderRadius: 15,
     margin: 5,
-    ...elevationShadowStyle(3),
+    padding: 10,
+    borderRadius: 10,
+    ...elevationShadowStyle(2),
     backgroundColor: Colors.cardBackground
   }
 });

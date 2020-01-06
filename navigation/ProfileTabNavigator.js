@@ -8,9 +8,23 @@ import TabBarIcon from '../components/TabBarIcon';
 import ProfileSreen from '../screens/Profile';
 import SettingsScreen from '../screens/SettingsScreen';
 
+import Colors from '../constants/Colors';
+
 const config = Platform.select({
   web: { headerMode: 'screen' },
-  default: {}
+  default: {
+    defaultNavigationOptions: {
+      headerMode: 'screen',
+      headerStyle: {
+        backgroundColor: Colors.header
+      },
+      headerTintColor: Colors.headerTint,
+      headerTitleStyle: {
+        fontWeight: 'bold'
+      },
+      headerShown: true
+    }
+  }
 });
 
 const SLinksStack = createStackNavigator(

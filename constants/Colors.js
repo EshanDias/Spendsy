@@ -7,10 +7,6 @@ const grey = ['#e8e8e8', '#ccc', '#6e6e6e'];
 const yellow = ['#ffff70', '#EAEB5E', '#666804'];
 const black = '#000000';
 
-export default {
-  ...defaultTheme
-};
-
 const defaultTheme = {
   backgroundColor: white[2],
 
@@ -57,3 +53,5 @@ const defaultTheme = {
 
   shadow: black
 };
+
+export default defaultTheme;
