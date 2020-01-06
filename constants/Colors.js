@@ -1,7 +1,7 @@
 const tintColor = '#2f95dc';
 const gold = ['#edc140', '#D5AF38', '#b7952d'];
 const red = ['#ff2b00', '#de300d', '#962c17'];
-const green = ['#29e636', '#00BD7D', '#0aad2e'];
+const green = ['#29e636', '#02d18b', '#00BD7D', '#008a5b'];
 const white = ['#fff', '#fefefe', '#f9fcfc', '#f5f1f0'];
 const grey = ['#e8e8e8', '#ccc', '#6e6e6e'];
 const yellow = ['#ffff70', '#EAEB5E', '#666804'];
@@ -26,7 +26,7 @@ const defaultTheme = {
   positiveNumber: green[0],
   negativeNumber: red[0],
 
-  header: green[1],
+  header: green[2],
   headerTint: white[0],
   headerText: white[0],
   headerIcon: white[0],
@@ -34,8 +34,9 @@ const defaultTheme = {
   cardHeader: grey[2],
   cardBackground: white[0],
 
-  submitButton: green[1],
+  submitButton: green[2],
   submitButtonText: white[0],
+  submitButtonOverlay: green[3],
 
   defaultIcon: grey[0],
 
@@ -46,9 +47,10 @@ const defaultTheme = {
   customButtonOverlay: grey[1],
 
   dashboardButton: white[0],
-  dashboardButtonText: green[1],
+  dashboardButtonText: green[2],
+  dashboardButtonOverlay: green[1],
 
-  walletScreenLink: green[1],
+  walletScreenLink: green[2],
   walletScreenIcon: gold[1],
 
   shadow: black

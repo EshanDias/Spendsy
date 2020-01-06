@@ -4,6 +4,7 @@ import { SimpleLineIcons, Entypo } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
 
 import Card from '../components/Card';
+import CustomButton from '../components/CustomButton';
 
 function Wallet(props) {
   return (
@@ -98,13 +99,14 @@ export default function Wallets(props) {
             color: Colors.walletScreenLink,
             textAlign: 'center',
             margin: 5,
-            padding: 10
+            padding: 10,
+            textDecorationLine: 'underline'
           }}
           onPress={() => {
             setHeight(-1);
           }}
         >
-          All Wallets({allWallets.length})
+          All Wallets ({allWallets.length})
         </Text>
       ) : (
         false
@@ -114,14 +116,15 @@ export default function Wallets(props) {
           justifyContent: 'center',
           margin: 5,
           width: '75%',
-          // alignItems: 'center',
           alignSelf: 'center'
         }}
       >
-        <Button
-          color={Colors.submitButton}
-          title="ADD WALLET"
+        <CustomButton
+          name="ADD WALLET"
           onPress={() => props.navigation.navigate('AddWallet')}
+          bgColor={Colors.dashboardButton}
+          textColor={Colors.dashboardButtonText}
+          underlayColor={Colors.dashboardButtonOverlay}
         />
       </View>
     </Card>

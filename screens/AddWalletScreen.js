@@ -16,6 +16,7 @@ import {
 import Colors from '../constants/Colors';
 
 import CustomTextInput from '../components/TextInput/TextInput';
+import CustomButton from '../components/CustomButton';
 import Card from '../components/Card';
 
 export default class AddWalletcSreen extends React.Component {
@@ -62,47 +63,11 @@ export default class AddWalletcSreen extends React.Component {
             />
           </Card>
         </ScrollView>
-        <TouchableHighlight
-          style={{
-            height: 50,
-            // top: 40,
-            // bottom: 10,
-            margin: 10,
-            borderRadius: 10,
-            backgroundColor: Colors.submitButton,
-            justifyContent: 'center',
-            alignItems: 'center',
-            ...elevationShadowStyle(3)
-          }}
-          onPress={() => this.save()}
-          underlayColor={Colors.customButtonOverlay}
-        >
-          <Text style={{ color: Colors.submitButtonText, padding: 25 }}>
-            SAVE WALLET
-          </Text>
-          {/* SAVE WALLET */}
-          {/* <Button
-              color={Colors.submitButton}
-              title="ADD WALLET"
-              onPress={() => this.save()}
-            /> */}
-        </TouchableHighlight>
+        <CustomButton name="SAVE WALLET" onPress={() => this.save()} />
       </View>
     );
   }
 }
-function elevationShadowStyle(elevation) {
-  return {
-    elevation,
-    shadowColor: Colors.shadow,
-    shadowOffset: { width: 0, height: 1.5 * elevation },
-    shadowOpacity: 0.3,
-    shadowRadius: 0.8 * elevation
-  };
-}
-// AddWalletcSreen.navigationOptions = {
-//   header: null
-// };
 
 const styles = StyleSheet.create({
   mainContainer: {
