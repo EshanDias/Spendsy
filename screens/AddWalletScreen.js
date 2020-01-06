@@ -43,7 +43,7 @@ export default class AddWalletcSreen extends React.Component {
               iconOwner="Entypo"
               iconColor={Colors.customTextBoxIcon}
               placeHolder="Wallet Name"
-              containerStyle={{ margin: 10, marginTop: 20 }}
+              containerStyle={{ marginBottom: 20, marginTop: 20 }}
             />
             <CustomTextInput
               iconType="icon"
@@ -51,7 +51,7 @@ export default class AddWalletcSreen extends React.Component {
               iconOwner="MaterialCommunityIcons"
               iconColor={Colors.customTextBoxIcon}
               placeHolder="Initial Balance"
-              containerStyle={{ margin: 10 }}
+              containerStyle={{ marginBottom: 20 }}
             />
             <CustomTextInput
               iconType="icon"
@@ -59,7 +59,7 @@ export default class AddWalletcSreen extends React.Component {
               iconOwner="MaterialCommunityIcons"
               iconColor={Colors.customTextBoxIcon}
               placeHolder="Currency"
-              containerStyle={{ margin: 10 }}
+              containerStyle={{ marginBottom: 20 }}
             />
           </Card>
         </ScrollView>

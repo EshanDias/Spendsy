@@ -70,7 +70,7 @@ export default function CustomTextInput(props) {
       <Label {...props} />
       <TextInput
         style={{
-          height: 40,
+          height: 50,
           padding: 5,
           margin: 10,
           borderWidth: 1,
@@ -84,10 +84,17 @@ export default function CustomTextInput(props) {
         autoCorrect={false}
         clearButtonMode="while-editing"
         value={props.value}
+        textContentType={props.textContentType}
+        keyboardType={props.keyboardType}
       />
     </View>
   );
 }
+
+CustomTextInput.defaultProps = {
+  textContentType: 'none',
+  keyboardType: 'default'
+};
 
 CustomTextInput.propTypes = {
   iconType: PropTypes.string,
@@ -96,5 +103,42 @@ CustomTextInput.propTypes = {
   iconOwner: PropTypes.string,
   placeHolder: PropTypes.string,
   value: PropTypes.string,
-  containerStyle: PropTypes.object
+  containerStyle: PropTypes.object,
+  textContentType: PropTypes.oneOf([
+    'none',
+    'addressCity',
+    'addressCityAndState',
+    'addressState',
+    'countryName',
+    'creditCardNumber',
+    'emailAddress',
+    'familyName',
+    'fullStreetAddress',
+    'givenName',
+    'jobTitle',
+    'location',
+    'middleName',
+    'name',
+    'namePrefix',
+    'nameSuffix',
+    'nickname',
+    'organizationName',
+    'postalCode',
+    'streetAddressLine1',
+    'streetAddressLine2',
+    'sublocality',
+    'telephoneNumber',
+    'username',
+    'password',
+    'newPassword',
+    'oneTimeCode'
+  ]),
+  keyboardType: PropTypes.oneOf([
+    'default',
+    'number-pad',
+    'decimal-pad',
+    'numeric',
+    'email-address',
+    'phone-pad'
+  ])
 };
