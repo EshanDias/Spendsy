@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     height: '100%'
   },
   notificationBar: {
-    backgroundColor: 'green',
+    backgroundColor: Colors.header,
     width: '100%',
     height: 24
   },
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     padding: 0,
     margin: 0,
     paddingLeft: 5,
-    backgroundColor: 'green',
+    backgroundColor: Colors.header,
     paddingTop: 10
   }
 });

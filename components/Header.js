@@ -14,15 +14,15 @@ import Colors from '../constants/Colors';
 
 const DateRangeSelector = () => {
   return (
-    <View style={{ backgroundColor: Colors.green, padding: 5 }}>
+    <View style={{ backgroundColor: Colors.header, padding: 5 }}>
       {/* <ScrollView horizontal >
           {getMonthList().map((buttonName, index) => (
             <View
               key={index.toString()}
-              style={{ color: '#f9c2ff', width: '10%' }}
+              style={{ color: Colors.header, width: '10%' }}
             >
               {console.log(buttonName)}
-              <Button color={Colors.green} title={buttonName} />
+              <Button color={Colors.header} title={buttonName} />
             </View>
           ))}
         </ScrollView> */}
@@ -31,8 +31,8 @@ const DateRangeSelector = () => {
         data={getMonthList()}
         keyExtractor={() => Math.random().toString()}
         renderItem={({ item }) => (
-          <View style={{ color: '#f9c2ff' }}>
-            <Button color={Colors.green} title={item} />
+          <View style={{ color: Colors.header }}>
+            <Button color={Colors.header} title={item} />
           </View>
         )}
         contentContainerStyle={{}}
@@ -49,7 +49,7 @@ function HeaderIconButtons(props) {
         style={{
           flexDirection: 'row',
           justifyContent: 'flex-end',
-          backgroundColor: Colors.green
+          backgroundColor: Colors.header
         }}
       >
         <Entypo.Button
@@ -81,17 +81,17 @@ class Header extends React.Component {
         {/* Header */}
         <View
           style={{
-            backgroundColor: Colors.green,
+            backgroundColor: Colors.header,
             padding: 10,
             flexDirection: 'row',
             justifyContent: 'space-between'
           }}
         >
           {/* Left */}
-          <View style={{ backgroundColor: Colors.green }}>
+          <View style={{ backgroundColor: Colors.header }}>
             <Text
               style={{
-                color: Colors.white,
+                color: Colors.headerText,
                 fontSize: 25,
                 fontWeight: 'bold',
                 paddingTop: 10,
@@ -125,12 +125,12 @@ const getMonthList = () => {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.backgroundColor,
     width: '100%',
     height: '100%'
   },
   notificationBar: {
-    backgroundColor: Colors.green,
+    backgroundColor: Colors.header,
     width: '100%',
     height: 24
   },
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
     margin: 0,
     marginBottom: -1,
-    backgroundColor: Colors.green
+    backgroundColor: Colors.header
   }
 });
 

@@ -10,19 +10,7 @@ import SettingsScreen from '../screens/SettingsScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
-  default: {
-    defaultNavigationOptions: {
-      headerMode: 'screen',
-      headerStyle: {
-        backgroundColor: '#f4511e'
-      },
-      headerTintColor: '#fff',
-      headerTitleStyle: {
-        fontWeight: 'bold'
-      },
-      headerShown: true
-    }
-  }
+  default: {}
 });
 
 const SLinksStack = createStackNavigator(

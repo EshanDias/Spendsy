@@ -18,7 +18,7 @@ function Wallet(props) {
       <Entypo
         name="wallet"
         size={35}
-        color={Colors.gold[1]}
+        color={Colors.walletScreenIcon}
         style={{ width: '10%' }}
       />
       <View
@@ -48,7 +48,7 @@ function Wallet(props) {
         <SimpleLineIcons
           name="arrow-right"
           size={20}
-          color={Colors.lightGrey}
+          color={Colors.defaultIcon}
         />
       </View>
     </View>
@@ -68,7 +68,7 @@ export default function Wallets(props) {
         style={{
           fontWeight: 'bold',
           fontSize: 15,
-          color: Colors.darkGrey,
+          color: Colors.cardHeader,
           padding: 10
         }}
       >
@@ -95,7 +95,7 @@ export default function Wallets(props) {
       {height > 0 ? (
         <Text
           style={{
-            color: Colors.greenColor,
+            color: Colors.walletScreenLink,
             textAlign: 'center',
             margin: 5,
             padding: 10
@@ -119,7 +119,7 @@ export default function Wallets(props) {
         }}
       >
         <Button
-          color={Colors.gold[1]}
+          color={Colors.submitButton}
           title="ADD WALLET"
           onPress={() => props.navigation.navigate('AddWallet')}
         />

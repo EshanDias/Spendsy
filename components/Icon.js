@@ -44,7 +44,7 @@ function CustomIconComponent(props) {
 }
 
 CustomIconComponent.defaultProps = {
-  iconColor: Colors.lightGrey,
+  iconColor: Colors.defaultIcon,
   iconSize: 30
 };
 

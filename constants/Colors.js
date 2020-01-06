@@ -1,38 +1,59 @@
 const tintColor = '#2f95dc';
 const gold = ['#edc140', '#D5AF38', '#b7952d'];
-const lightGrey = '#e8e8e8';
-const greyColor = '#c7c7c7';
-const darkGrey = '#6e6e6e';
-const lightGreen = '#29e636';
-const red = '#de300d';
-const green = '#00BD7D';
-const greenColor = '#0aad2e';
-const white = '#fff';
-const grey = ['#e8e8e8', '#c7c7c7', '#6e6e6e'];
+const red = ['#ff2b00', '#de300d', '#962c17'];
+const green = ['#29e636', '#00BD7D', '#0aad2e'];
+const white = ['#fff', '#fefefe', '#f9fcfc', '#f5f1f0'];
+const grey = ['#e8e8e8', '#ccc', '#6e6e6e'];
+const yellow = ['#ffff70', '#EAEB5E', '#666804'];
+const black = '#000000';
 
 export default {
-  tintColor,
-  gold,
-  lightGrey,
-  greyColor,
-  darkGrey,
-  red,
-  lightGreen,
-  green,
-  white,
-  greenColor,
-  grey,
+  ...defaultTheme
+};
 
-  backgroundColor: '#f9fcfc',
-  tabIconDefault: '#ccc',
+const defaultTheme = {
+  backgroundColor: white[2],
+
+  tabIconDefault: grey[1],
   tabIconSelected: tintColor,
-  tabBar: '#fefefe',
-  errorBackground: 'red',
-  errorText: '#fff',
-  warningBackground: '#EAEB5E',
-  warningText: '#666804',
+  tabBar: white[1],
+
+  errorBackground: red[1],
+  errorText: white[0],
+
+  warningBackground: yellow[1],
+  warningText: yellow[2],
+
   noticeBackground: tintColor,
-  noticeText: '#fff',
-  positiveNumber: lightGreen,
-  negativeNumber: red
+  noticeText: white[0],
+
+  positiveNumber: green[0],
+  negativeNumber: red[0],
+
+  header: green[1],
+  headerTint: white[0],
+  headerText: white[0],
+  headerIcon: white[0],
+
+  cardHeader: grey[2],
+  cardBackground: white[0],
+
+  submitButton: green[1],
+  submitButtonText: white[0],
+
+  defaultIcon: grey[0],
+
+  customTextBoxBorder: grey[0],
+  customTextBoxText: black,
+  customTextBoxIcon: grey[2],
+
+  customButtonOverlay: grey[1],
+
+  dashboardButton: white[0],
+  dashboardButtonText: green[1],
+
+  walletScreenLink: green[1],
+  walletScreenIcon: gold[1],
+
+  shadow: black
 };

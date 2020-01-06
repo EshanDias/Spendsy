@@ -40,7 +40,7 @@ export default class AddWalletcSreen extends React.Component {
               iconType="icon"
               iconName="wallet"
               iconOwner="Entypo"
-              iconColor={Colors.grey[1]}
+              iconColor={Colors.customTextBoxIcon}
               placeHolder="Wallet Name"
               containerStyle={{ margin: 10, marginTop: 20 }}
             />
@@ -48,7 +48,7 @@ export default class AddWalletcSreen extends React.Component {
               iconType="icon"
               iconName="cash-multiple"
               iconOwner="MaterialCommunityIcons"
-              iconColor={Colors.grey[1]}
+              iconColor={Colors.customTextBoxIcon}
               placeHolder="Initial Balance"
               containerStyle={{ margin: 10 }}
             />
@@ -56,7 +56,7 @@ export default class AddWalletcSreen extends React.Component {
               iconType="icon"
               iconName="currency-usd"
               iconOwner="MaterialCommunityIcons"
-              iconColor={Colors.grey[1]}
+              iconColor={Colors.customTextBoxIcon}
               placeHolder="Currency"
               containerStyle={{ margin: 10 }}
             />
@@ -69,18 +69,20 @@ export default class AddWalletcSreen extends React.Component {
             // bottom: 10,
             margin: 10,
             borderRadius: 10,
-            backgroundColor: Colors.gold[1],
+            backgroundColor: Colors.submitButton,
             justifyContent: 'center',
             alignItems: 'center',
             ...elevationShadowStyle(3)
           }}
           onPress={() => this.save()}
-          underlayColor={Colors.gold[2]}
+          underlayColor={Colors.customButtonOverlay}
         >
-          <Text style={{ color: Colors.white, padding: 25 }}>SAVE WALLET</Text>
+          <Text style={{ color: Colors.submitButtonText, padding: 25 }}>
+            SAVE WALLET
+          </Text>
           {/* SAVE WALLET */}
           {/* <Button
-              color={Colors.green}
+              color={Colors.submitButton}
               title="ADD WALLET"
               onPress={() => this.save()}
             /> */}
@@ -92,7 +94,7 @@ export default class AddWalletcSreen extends React.Component {
 function elevationShadowStyle(elevation) {
   return {
     elevation,
-    shadowColor: Colors.darkGrey,
+    shadowColor: Colors.shadow,
     shadowOffset: { width: 0, height: 1.5 * elevation },
     shadowOpacity: 0.3,
     shadowRadius: 0.8 * elevation
@@ -109,7 +111,7 @@ const styles = StyleSheet.create({
     height: '100%'
   },
   notificationBar: {
-    backgroundColor: 'green',
+    backgroundColor: Colors.header,
     width: '100%',
     height: 24
   },
@@ -117,7 +119,7 @@ const styles = StyleSheet.create({
     padding: 0,
     margin: 0,
     paddingLeft: 5,
-    backgroundColor: 'green',
+    backgroundColor: Colors.header,
     paddingTop: 10
   }
 });

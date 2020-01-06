@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     margin: 5,
     ...elevationShadowStyle(3),
-    backgroundColor: Colors.white
+    backgroundColor: Colors.cardBackground
   }
 });
 
@@ -19,7 +19,7 @@ export default function Card(props) {
 function elevationShadowStyle(elevation) {
   return {
     elevation,
-    shadowColor: 'black',
+    shadowColor: Colors.shadow,
     shadowOffset: { width: 0, height: 0.5 * elevation },
     shadowOpacity: 0.3,
     shadowRadius: 0.8 * elevation

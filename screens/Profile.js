@@ -30,7 +30,7 @@ export default class ProfileSreen extends React.Component {
         >
           <Text>Profile SCREEN</Text>
           <Button
-            color={Colors.gold[1]}
+            color={Colors.submitButton}
             title="dashboard"
             onPress={() => this.props.navigation.navigate('Dashboard')}
           />
@@ -46,12 +46,12 @@ export default class ProfileSreen extends React.Component {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.backgroundColor,
     width: '100%',
     height: '100%'
   },
   notificationBar: {
-    backgroundColor: 'green',
+    backgroundColor: Colors.header,
     width: '100%',
     height: 24
   },
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     padding: 0,
     margin: 0,
     paddingLeft: 5,
-    backgroundColor: 'green',
+    backgroundColor: Colors.header,
     paddingTop: 10
   }
 });

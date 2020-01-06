@@ -19,9 +19,9 @@ const config = Platform.select({
     defaultNavigationOptions: {
       headerMode: 'screen',
       headerStyle: {
-        backgroundColor: Colors.green
+        backgroundColor: Colors.header
       },
-      headerTintColor: '#fff',
+      headerTintColor: Colors.headerTint,
       headerTitleStyle: {
         fontWeight: 'bold'
       },

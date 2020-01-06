@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     margin: 5,
     ...elevationShadowStyle(3),
-    backgroundColor: Colors.white
+    backgroundColor: Colors.cardBackground
   }
 });
 
@@ -74,7 +74,7 @@ export default function CustomTextInput(props) {
           padding: 5,
           margin: 10,
           borderWidth: 1,
-          borderColor: Colors.lightGrey,
+          borderColor: Colors.customTextBoxBorder,
           borderRadius: 10,
           width: getWidth(props)
         }}
